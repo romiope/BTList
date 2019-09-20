@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+        val devices = viewModel.getDevices()
+        devices.forEach { System.err.println("MainFragment: connected BT device names ${it.name}") }
     }
-
 }
